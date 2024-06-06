@@ -1,0 +1,41 @@
+.wrapper
+  position: relative
+  flex-grow: 1
+  margin-top: 100px
+  @include media(1240)
+    margin-top: 64px
+
+.content
+  margin: 0 auto
+  max-width: 1176px + 32px
+  padding-right: 16px
+  padding-left: 16px
+  @include media(1240)
+    max-width: 852px + 32px
+  @include media(950)
+    max-width: 648px + 32px
+  @include media(700)
+    max-width: 468px + 32px
+  @include media(520)
+    max-width: 392px + 32px
+
+.caption
+  font-size: 62px
+  line-height: 72px
+  @include media(1240)
+    font-size: 33px
+    line-height: 38px
+
+.text
+  font-size: 18px
+  line-height: 26px
+  @include media(1240)
+    font-size: 16px
+    line-height: 22px
+
+.text-big
+  font-size: 24px
+  line-height: 32px
+  @include media(1240)
+    font-size: 16px
+    line-height: 22px

@@ -25,7 +25,7 @@ module.exports = (env, argv) => {
                     }
                 },
                 {
-                    test: /\.scss$/,
+                    test: /\.(scss|sass)$/,
                     use: [
                         isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                         'css-loader',
@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
                     ],
                 },
                 {
-                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                    test: /\.(woff|woff2|eot|ttf|ttc|otf)$/i,
                     use: [
                         {
                             loader: 'file-loader',
