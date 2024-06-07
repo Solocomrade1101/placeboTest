@@ -1,0 +1,134 @@
+//.wrapper
+
+.header
+  margin-bottom: 245px
+
+.header__text
+  max-width: 90%
+  margin: 36px auto 0
+  text-align: center
+  color: $red-light
+  span
+    color: $brown
+  a
+    text-decoration: none
+    color: $brown-light
+
+.main
+  margin-bottom: 107px
+
+.content
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.logo
+  width: 285px
+  height: 192px
+  margin: 0 auto 220px
+
+.logo__image
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.madame
+  margin-bottom: 200px
+
+.madame__block
+  position: relative
+
+.madame__picture
+  position: relative
+  width: 562px
+
+
+.madame__image
+  height: 537px
+
+.madame__fill
+  position: absolute
+  top: 50%
+  width: 278px
+  height: 61px
+
+.madame__mark
+  position: absolute
+  top: 0
+  width: 68px
+  height: 118px
+
+.madame__name
+  position: absolute
+  bottom: 0
+  font-size: 21px
+  line-height: 26px
+  color: $pink
+
+//.history
+
+.history__caption
+  position: relative
+  max-width: 869px
+  margin: 0 auto 187px
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: -1
+    display: block
+    width: 578px
+    height: 986px
+    +bgImg('caption-fone.png')
+
+.history__text
+  max-width: 400px
+  margin: 0 auto 20px
+  text-align: center
+
+.history__portrait
+  margin-bottom: 62px
+
+.history__portrait-photo
+  width: 213px
+  img
+    height: 297px
+
+
+.history__portrait-mark
+  width: 142px
+  img
+    height: 209px
+
+.history__family
+  margin-bottom: 130px
+
+.history__family-photo
+  width: 909px
+  img
+    height: 591px
+
+.history__family-mark
+  width: 270px
+  img
+    height: 408px
+
+.footer
+  margin-bottom: 87px
+
+.footer__text
+  max-width: 400px
+  margin: 0 auto 44px
+  text-align: center
+  color: $pink-dark
+
+.footer__list
+  display: flex
+  align-items: center
+  gap: 10px
+
+//.footer__item
+
+.footer__link
+  color: $red-light

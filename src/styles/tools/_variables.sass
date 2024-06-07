@@ -6,6 +6,7 @@ $red: #B51B1B
 $red-light: #C22727
 $brown: #290B0B
 $brown-light: #2F0A0A
+$yellow: #F0EEDB
 
 // bp 1240, 950, 700, 520
 @mixin media($bp-size)
@@ -20,13 +21,13 @@ $brown-light: #2F0A0A
   @include media_min(1240)
     @content
 
-//$imgPath: '/statics/images/'
+$imgPath: '../assets/images/'
 
-//@mixin bgImg($img)
-//  background-image: url($imgPath + $img)
+@mixin bgImg($img)
+  background-image: url($imgPath + $img)
 
-//@mixin bgIcon($img, $w: 100%, $h: 100%)
-//  background-image: url($imgPath + $img)
-//  background-size: $w $h
-//  background-repeat: no-repeat
-//  background-position: center center
+@mixin bgIcon($img, $w: 100%, $h: 100%)
+  background-image: url($imgPath + $img)
+  background-size: $w $h
+  background-repeat: no-repeat
+  background-position: center center

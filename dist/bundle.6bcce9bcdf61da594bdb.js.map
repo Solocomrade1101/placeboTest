@@ -1,1 +1,0 @@
-{"version":3,"file":"bundle.6bcce9bcdf61da594bdb.js","mappings":"mBAEAA,QAAQC,IAAI,gB","sources":["webpack://placebo/./src/js/main.js"],"sourcesContent":["import '../styles/main.sass';\r\n\r\nconsole.log('Hello, World!');"],"names":["console","log"],"sourceRoot":""}

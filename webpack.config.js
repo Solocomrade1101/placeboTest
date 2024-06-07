@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
@@ -12,82 +14,41 @@ module.exports = (env, argv) => {
             path: path.resolve(__dirname, 'dist'),
             clean: true,
         },
+        mode: isProduction ? 'production' : 'development',
         module: {
             rules: [
                 {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-env']
-                        }
-                    }
-                },
-                {
-                    test: /\.(scss|sass)$/,
+                    test: /\.(sa|sc|c)ss$/,
                     use: [
                         isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                         'css-loader',
-                        'sass-loader'
+                        'sass-loader' // добавьте sass-loader
                     ],
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'assets/fonts/[name].[contenthash][ext]'
+                    }
                 },
                 {
                     test: /\.(png|jpe?g|gif|svg)$/i,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {
-                                name: '[path][name].[ext]',
-                                context: 'src'
-                            },
-                        },
-                        {
-                            loader: 'image-webpack-loader',
-                            options: {
-                                disable: !isProduction, // Отключить оптимизацию в режиме разработки
-                                mozjpeg: {
-                                    progressive: true,
-                                    quality: 65,
-                                },
-                                optipng: {
-                                    enabled: true,
-                                },
-                                pngquant: {
-                                    quality: [0.65, 0.90],
-                                    speed: 4,
-                                },
-                                gifsicle: {
-                                    interlaced: false,
-                                },
-                                webp: {
-                                    quality: 75,
-                                },
-                            },
-                        },
-                    ],
-                },
-                {
-                    test: /\.(woff|woff2|eot|ttf|ttc|otf)$/i,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {
-                                name: '[path][name].[ext]',
-                                context: 'src'
-                            },
-                        },
-                    ],
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'assets/images/[name].[contenthash][ext]'
+                    }
                 },
                 {
                     test: /\.html$/,
-                    use: ['html-loader'],
+                    use: ['html-loader']
                 },
             ],
         },
         plugins: [
             new HtmlWebpackPlugin({
                 template: './src/index.html',
+                filename: 'index.html',
                 minify: isProduction ? {
                     removeAttributeQuotes: true,
                     collapseWhitespace: true,
@@ -95,18 +56,16 @@ module.exports = (env, argv) => {
                 } : false
             }),
             new MiniCssExtractPlugin({
-                filename: '[name].[contenthash].css',
+                filename: 'styles/[name].[contenthash].css',
             }),
         ],
-        devServer: {
-            static: {
-                directory: path.resolve(__dirname, 'dist'),
-            },
-            compress: true,
-            port: 9000,
-            open: true,
-            hot: true,
+        optimization: {
+            minimizer: [
+                new CssMinimizerPlugin(), // Add CssMinimizerPlugin here
+                new TerserPlugin(),
+            ],
         },
+        // devServer configuration...
         devtool: isProduction ? 'source-map' : 'inline-source-map',
     };
 };
