@@ -1,6 +1,3 @@
 {
-  "public": "dist",
-  "build": {
-    "overwrite": true
-  }
+  "pages": "dist"
 }
