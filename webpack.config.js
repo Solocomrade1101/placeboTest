@@ -61,8 +61,15 @@ module.exports = (env, argv) => {
         ],
         optimization: {
             minimizer: [
+                new TerserPlugin({
+                    terserOptions: {
+                        format: {
+                            comments: false,
+                        },
+                    },
+                    extractComments: false,
+                }),
                 new CssMinimizerPlugin(),
-                new TerserPlugin(),
             ],
         },
         devtool: isProduction ? 'source-map' : 'inline-source-map',

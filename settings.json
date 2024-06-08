@@ -1,0 +1,6 @@
+{
+  "public": "dist",
+  "build": {
+    "overwrite": true
+  }
+}

@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 
 gsap.registerPlugin(ScrollTrigger)
-if (ScrollTrigger.isTouch !== 1) {
+if (ScrollTrigger.isTouch !== 1 &&  window.innerWidth > 1240) {
 
   gsap.fromTo('.logo-1', { y: 0, opacity:1 }, {
     y: 300,
