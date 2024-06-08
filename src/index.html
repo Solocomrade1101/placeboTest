@@ -5,56 +5,57 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="This is test project">
     <title>Placebo test</title>
     <link rel="icon" href="data:,">
     <link rel="preload" href="./assets/fonts/GENTO-DREAM.woff2" as="font" crossorigin="anonymous" type="font/woff2">
     <link rel="preload" href="./assets/fonts/PTMono-Bold-01.woff" as="font" crossorigin="anonymous" type="font/woff">
     <link rel="preload" href="./assets/fonts/PTMono-Regular-02.woff" as="font" crossorigin="anonymous" type="font/woff">
-<!--    <style>-->
-<!--    #preloader {-->
-<!--    display: flex;-->
-<!--    justify-content: center;-->
-<!--    align-items: center;-->
-<!--    position: fixed;-->
-<!--    top: 0;-->
-<!--    left: 0;-->
-<!--    width: 100%;-->
-<!--    height: 100%;-->
-<!--    background-color: #F0EEDB;-->
-<!--    z-index: 9999;-->
-<!--    }-->
-<!--    .loading-text {-->
-<!--    font-size: 24px;-->
-<!--    color: #B51B1B;-->
-<!--    position: relative;-->
-<!--    }-->
-<!--    .loading-text::after {-->
-<!--    content: '...';-->
-<!--    animation: dots 1s steps(3, end) infinite;-->
-<!--    }-->
-<!--    @keyframes dots {-->
-<!--    0%, 20% {-->
-<!--    content: '';-->
-<!--    }-->
-<!--    40% {-->
-<!--    content: '.';-->
-<!--    }-->
-<!--    60% {-->
-<!--    content: '..';-->
-<!--    }-->
-<!--    80%, 100% {-->
-<!--    content: '...';-->
-<!--    }-->
-<!--    }-->
-<!--    .hidden {-->
-<!--    display: none;-->
-<!--    }-->
-<!--    </style>-->
+    <style>
+    #preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F0EEDB;
+    z-index: 9999;
+    }
+    .loading-text {
+    font-size: 24px;
+    color: #B51B1B;
+    position: relative;
+    }
+    .loading-text::after {
+    content: '...';
+    animation: dots 1s steps(3, end) infinite;
+    }
+    @keyframes dots {
+    0%, 20% {
+    content: '';
+    }
+    40% {
+    content: '.';
+    }
+    60% {
+    content: '..';
+    }
+    80%, 100% {
+    content: '...';
+    }
+    }
+    .hidden {
+    display: none;
+    }
+    </style>
 </head>
 <body>
-<!--    <div id="preloader">-->
-<!--        <div class="loading-text">Loading</div>-->
-<!--    </div>-->
+    <div id="preloader">
+        <div class="loading-text">Loading</div>
+    </div>
     <div class="wrapper " id="main-content">
         <header class="header">
             <p class="header__text text-small">В старый особняк на <span data-element="street">Кожевнической 16с4</span> обычно заезжали гости со всего света. Зная секретный код
@@ -63,17 +64,17 @@
         </header>
         <main class="main">
             <div class="content">
-                <div class="logo logo-1"><img src="./assets/images/ic_logo.svg" alt="логотип" class="logo__image"></div>
+                <div class="logo logo-1"><img src="./assets/images/ic_logo.svg" alt="логотип" class="logo__image" loading="lazy"></div>
                 <section class="madame">
                     <div class="madame__block">
                         <picture class="madame__picture">
                             <source srcset="./assets/images/madameRoche_300.webp 1x, ./assets/images/madameRoche_600.webp 2x" media="(max-width: 700px)" type="image/webp">
                             <source srcset="./assets/images/madameRoche_562.webp 1x, ./assets/images/madameRoche_843.webp 1.5x" type="image/webp">
                             <source srcset="./assets/images/madameRoche_562.jpg 1x, ./assets/images/madameRoche_843.jpg 1.5x">
-                            <img class="madame__image" src="./assets/images/madameRoche_562.jpg" alt="Madame Roche">
+                            <img loading="lazy" class="madame__image" src="./assets/images/madameRoche_562.jpg" alt="Madame Roche">
                         </picture>
-                        <img src="./assets/images/madameRoche_fill.png" alt="фон" class="madame__fill">
-                        <img src="./assets/images/madameRoche_mark.png" alt="марка" class="madame__mark">
+                        <img loading="lazy" src="./assets/images/madameRoche_fill.png" alt="фон" class="madame__fill">
+                        <img loading="lazy" src="./assets/images/madameRoche_mark.png" alt="марка" class="madame__mark">
                         <span class="madame__name">Madame Roche</span>
                     </div>
                 </section>
@@ -88,7 +89,7 @@
                             <source srcset="./assets/images/history-1_100.webp 1x, ./assets/images/history-1_200.webp 2x" media="(max-width: 700px)" type="image/webp">
                             <source srcset="./assets/images/history-1_213.webp 1x, ./assets/images/history-1_320.webp 1.5x" type="image/webp">
                             <source srcset="./assets/images/history-1_213.jpg 1x, ./assets/images/history-1_320.jpg 1.5x">
-                            <img src="./assets/images/history-1_213.jpg" alt="портрет Madame Roche">
+                            <img src="./assets/images/history-1_213.jpg" alt="портрет Madame Roche" loading="lazy">
                         </picture>
                         <picture class="history__portrait-mark">
                             <source srcset="./assets/images/history-2_70.webp 1x, ./assets/images/history-2_140.webp 2x" media="(max-width: 700px)" type="image/webp">
@@ -104,19 +105,19 @@
                             <source srcset="./assets/images/history-3_600.webp 1x, ./assets/images/history-3_1200.webp 2x" media="(max-width: 1240px)" type="image/webp">
                             <source srcset="./assets/images/history-3_909.webp 1x, ./assets/images/history-3_1364.webp 1.5x" type="image/webp">
                             <source srcset="./assets/images/history-3_909.jpg 1x, ./assets/images/history-3_1364.jpg 1.5x">
-                            <img src="./assets/images/history-3_909.jpg" alt="фотография девочек, которые смотрят на картину">
+                            <img src="./assets/images/history-3_909.jpg" alt="фотография девочек, которые смотрят на картину" loading="lazy">
                         </picture>
                         <picture class="history__family-mark">
                             <source srcset="./assets/images/history-4_70.webp 1x, ./assets/images/history-4_140.webp 2x" media="(max-width: 700px)" type="image/webp">
                             <source srcset="./assets/images/history-4_150.webp 1x, ./assets/images/history-4_300.webp 2x" media="(max-width: 1240px)" type="image/webp">
                             <source srcset="./assets/images/history-4_270.webp 1x, ./assets/images/history-4_405.webp 1.5x" type="image/webp">
                             <source srcset="./assets/images/history-4_270.png 1x, ./assets/images/history-4_405.png 1.5x">
-                            <img src="./assets/images/history-4_270.png" alt="кинотеатр луна-парк">
+                            <img src="./assets/images/history-4_270.png" alt="кинотеатр луна-парк" loading="lazy">
                         </picture>
                     </div>
                     <p class="history__text text">Основное меню представлено актуальным и авторским comfort-food, построенным на захватывающих вкусовых сочетаниях соусов и высококачественных овощах,  мясе и морепродуктах.</p>
                 </article>
-                <div class="logo logo-2"><img src="./assets/images/ic_logo.svg" alt="логотип" class="logo__image"></div>
+                <div class="logo logo-2"><img src="./assets/images/ic_logo.svg" alt="логотип" class="logo__image" loading="lazy"></div>
 
             </div>
         </main>
