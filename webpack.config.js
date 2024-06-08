@@ -22,7 +22,7 @@ module.exports = (env, argv) => {
                     use: [
                         isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                         'css-loader',
-                        'sass-loader' // добавьте sass-loader
+                        'sass-loader'
                     ],
                 },
                 {
@@ -33,7 +33,7 @@ module.exports = (env, argv) => {
                     }
                 },
                 {
-                    test: /\.(png|jpe?g|gif|svg)$/i,
+                    test: /\.(webp|png|jpe?g|gif|svg)$/i,
                     type: 'asset/resource',
                     generator: {
                         filename: 'assets/images/[name].[contenthash][ext]'
@@ -61,11 +61,10 @@ module.exports = (env, argv) => {
         ],
         optimization: {
             minimizer: [
-                new CssMinimizerPlugin(), // Add CssMinimizerPlugin here
+                new CssMinimizerPlugin(),
                 new TerserPlugin(),
             ],
         },
-        // devServer configuration...
         devtool: isProduction ? 'source-map' : 'inline-source-map',
     };
 };

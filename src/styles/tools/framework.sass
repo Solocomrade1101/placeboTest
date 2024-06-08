@@ -4,7 +4,7 @@
 
 .content
   margin: 0 auto
-  max-width: 1176px + 32px
+  max-width: 1070px + 32px
   padding-right: 16px
   padding-left: 16px
   @include media(1240)
@@ -22,12 +22,22 @@
   font-family: "GENTODREAM", sans-serif
   font-weight: 200
   color: $red
+  @include media(1240)
+    font-size: 62px
+    line-height: 72px
+  @include media(700)
+    font-size: 33px
+    line-height: 45px
+
 
 .text-small
   font-size: 14px
-  line-height: 14px
+  line-height: 18px
   letter-spacing: .5px
 
 .text
   font-size: 18px
   line-height: 26px
+  @include media(700)
+    font-size: 14px
+    line-height: 20px
